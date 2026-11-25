@@ -35,7 +35,7 @@ defaults
 
 frontend http-in
     bind *:80
-    bind *:443 ssl crt /etc/haproxy/certs/www.kingsleykoech.tech.pem
+    bind *:443 ssl crt /etc/haproxy/certs/gagaba.tech.pem
     reqadd X-Forwarded-Proto:\ https
     redirect scheme https code 301 if !{ ssl_fc }
     default_backend web-backend
@@ -43,5 +43,5 @@ frontend http-in
 backend web-backend
     mode http
     balance roundrobin
-    server 7327-web-01 35.178.212.47:80 check
-    server 7327-web-02 18.130.235.76:80 check
+    server 7233-web-01 35.178.147.32:80 check
+    server 7233-web-02 35.179.168.186:80 check
